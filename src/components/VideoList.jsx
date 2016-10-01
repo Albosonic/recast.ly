@@ -1,16 +1,12 @@
-var VideoList = () => (
-  <div className="video-list media">
-    <VideoListEntry />
-    <VideoListEntry />
-    <VideoListEntry />
-    <VideoListEntry />
-    <VideoListEntry />
-    <VideoListEntry />
-    <VideoListEntry />
-    <VideoListEntry />
-    <VideoListEntry />
-  </div>
-);
+var VideoList = ({videos, playerFunction}) => {
+  return(
+        <div className="video-list media">
+            {videos.map((video) => {
+              return <VideoListEntry playerFunction={playerFunction} key={video.id.videoId} video={video}/>
+            })}
+        </div>
+    ) 
+};
 
 // PropTypes tell other developers what `props` a component expects
 // Warnings will be shown in the console when the defined rules are violated

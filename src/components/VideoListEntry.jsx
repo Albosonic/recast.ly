@@ -1,14 +1,17 @@
-var VideoListEntry = () => (
-  <div className="video-list-entry">
-    <div className="media-left media-middle">
-      <img className="media-object" src="https://i.ytimg.com/vi/dQw4w9WgXcQ/default.jpg" alt="" />
-    </div>
-    <div className="media-body">
-      <div className="video-list-entry-title">Video Title</div>
-      <div className="video-list-entry-detail">Video Description</div>
-    </div>
-  </div>
-);
+var VideoListEntry = ({video, playerFunction}) => {
+  var url = video.snippet.thumbnails.default.url, title = video.snippet.title, description = video.snippet.description;
+  return(
+      <div onClick={() => playerFunction(video)} className="video-list-entry">
+        <div className="media-left media-middle">
+          <img className="media-object" src={url} alt="" />
+        </div>
+        <div className="media-body">
+          <div className="video-list-entry-title">{title}</div>
+          <div className="video-list-entry-detail">{description}</div>
+        </div>
+      </div>
+    )
+};
 
 // PropTypes tell other developers what `props` a component expects
 // Warnings will be shown in the console when the defined rules are violated
