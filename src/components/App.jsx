@@ -9,7 +9,6 @@ class App extends React.Component {
     }
     this.handleVideoListEntryClick = this.handleVideoListEntryClick.bind(this);
     this.getYouTubeVideos = this.getYouTubeVideos.bind(this);
-    // this.props.serchYouTube = this.props.serchYouTube.bind(this);
 
   {console.log(this.state)}
   }
