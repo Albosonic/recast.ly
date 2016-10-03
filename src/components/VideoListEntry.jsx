@@ -1,12 +1,12 @@
-var VideoListEntry = ({video, playerFunction}) => {
+var VideoListEntry = ({video, handleVideoListEntryClick}) => {
   var url = video.snippet.thumbnails.default.url, title = video.snippet.title, description = video.snippet.description;
   return(
-      <div onClick={() => playerFunction(video)} className="video-list-entry">
+      <div className="video-list-entry">
         <div className="media-left media-middle">
           <img className="media-object" src={url} alt="" />
         </div>
         <div className="media-body">
-          <div className="video-list-entry-title">{title}</div>
+          <div onClick={() => handleVideoListEntryClick(video)} className="video-list-entry-title">{title}</div>
           <div className="video-list-entry-detail">{description}</div>
         </div>
       </div>

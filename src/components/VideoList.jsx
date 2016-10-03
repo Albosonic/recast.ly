@@ -1,8 +1,8 @@
-var VideoList = ({videos, playerFunction}) => {
+var VideoList = ({videos, handleVideoListEntryClick}) => {
   return(
         <div className="video-list media">
             {videos.map((video) => {
-              return <VideoListEntry playerFunction={playerFunction} key={video.id.videoId} video={video}/>
+              return <VideoListEntry handleVideoListEntryClick={handleVideoListEntryClick} key={video.id.videoId} video={video}/>
             })}
         </div>
     ) 
